@@ -1,0 +1,60 @@
+<root>
+<value name="Lookup Distance Left Front">
+  <element>
+    <key>10000</key>
+    <value>10000.00 m</value>
+  </element>
+  <element>
+    <key>250</key>
+    <value>250.00 m</value>
+  </element>
+  <element>
+    <key>0</key>
+    <value>0.00 m</value>
+  </element>
+  <element>
+    <key>-317</key>
+    <value>-317.00 m</value>
+  </element>
+</value>
+<value name="Lookup Distance Left Rear">
+  <element>
+    <key>1000</key>
+    <value>1000.00 m</value>
+  </element>
+  <element>
+    <key>-1000</key>
+    <value>-1.000 m</value>
+  </element>
+</value>
+<value name="Lookup Distance Right Front">
+  <element>
+    <key>1000</key>
+    <value>1000.00 m</value>
+  </element>
+  <element>
+    <key>-1000</key>
+    <value>-1.000 m</value>
+  </element>
+</value>
+<value name="Lookup Distance Right Rear">
+  <element>
+    <key>1000</key>
+    <value>1000.00 m</value>
+  </element>
+  <element>
+    <key>-1000</key>
+    <value>-1.000 m</value>
+  </element>
+</value>
+<node name="Wheel Velocity Left Rear">
+  <value name="diameter">1.000 m</value>
+  <value name="spikes">24</value>
+  <value name="filter">0.1</value>
+</node>
+<node name="Wheel Velocity Right Rear">
+  <value name="diameter">1.000 m</value>
+  <value name="spikes">24</value>
+  <value name="filter">0.1</value>
+</node>
+</root>
