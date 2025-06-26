@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE targets PUBLIC "-//RRLIB//DTD make 1.0" "http://finroc.org/xml/1.0/make.dtd">
+<targets>
+
+  <finroclibrary>
+    <sources>
+      gMainControl.cpp
+      mTrackRecognition.cpp
+      mSignRecognition.cpp
+      mTrackMovement.cpp
+      mObstacleRecognition.cpp
+      mMoveFusion.cpp
+    </sources>
+  </finroclibrary>
+  
+  <finrocprogram name="robprak_2024_2">
+    <sources>
+      pUnimogControl.cpp
+    </sources>
+  </finrocprogram>
+
+</targets>

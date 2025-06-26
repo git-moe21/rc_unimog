@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Finstructable version="1703">
+  <edge src="Hardware Interface/Sensor Output/Image Left" dest="TrackRecognition/Sensor Input/ZED Cam Single Image"/>
+  <edge src="Sensor Input/Pose" dest="TrackRecognition/Sensor Input/In Pose 3d"/>
+</Finstructable>
