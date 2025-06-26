@@ -1,0 +1,50 @@
+<root>
+<value name="Curvature Lookup">
+  <element>
+    <key>1.64 1/m</key>
+    <value>310</value>
+  </element>
+    <element>
+    <key>1.51 1/m</key>
+    <value>250</value>
+  </element>
+  <element>
+    <key>1.14 1/m</key>
+    <value>200</value>
+  </element>
+    <element>
+    <key>0 1/m</key>
+    <value>-3</value>
+  </element>
+    <element>
+    <key>-1.09 1/m</key>
+    <value>-200</value>
+  </element>
+    <element>
+    <key>-1.3 1/m</key>
+    <value>-250</value>
+  </element>
+    <element>
+    <key>-1,47 1/m</key>
+    <value>-310</value>
+  </element>
+</value>
+<value name="Velocity Lookup">
+  <element>
+    <key>-0.15 m/s</key>
+    <value>-400</value>
+  </element>
+  <element>
+    <key>0 m/s</key>
+    <value>0</value>
+  </element>
+  <element>
+    <key>0.29 m/s</key>
+    <value>200</value>
+  </element>
+  <element>
+    <key>0.53 m/s</key>
+    <value>300</value>
+  </element>
+</value> 
+</root>
