@@ -19,20 +19,6 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //
 //----------------------------------------------------------------------
-/*!\file    projects/rc_unimog_control_test/pUnimogControl.cpp
- *
- * \author  Tobias Groll
- *
- * \date    2017-03-31
- *
- * \brief Contains mUnimogControl
- *
- * \b pUnimogControl
- *
- * controller program for the rc unimog
- *
- */
-//----------------------------------------------------------------------
 #include "plugins/structure/default_main_wrapper.h"
 
 //----------------------------------------------------------------------

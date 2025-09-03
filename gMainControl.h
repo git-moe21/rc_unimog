@@ -19,18 +19,6 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 //----------------------------------------------------------------------
-/*!\file    gMainControl.h
- *
- * \author  Unknown
- *
- * \date    2011-11-07
- *
- * \brief Contains gMainControl
- *
- * \b gMainControl
- *
- */
-//----------------------------------------------------------------------
 #ifndef _rc_unimog__gMainControl_h_
 #define _rc_unimog__gMainControl_h_
 

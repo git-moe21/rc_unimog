@@ -1,3 +1,24 @@
+//
+// You received this file as part of Finroc
+// A framework for intelligent robot control
+//
+// Copyright (C) AG Robotersysteme TU Kaiserslautern
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along
+// with this program; if not, write to the Free Software Foundation, Inc.,
+// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+//
+//----------------------------------------------------------------------
 #include "projects/robprak_2024_2/mSignRecognition.h"
 #include "rrlib/coviroa/opencv_utils.h"
 #include <opencv2/opencv.hpp>
@@ -173,10 +194,10 @@ void mSignRecognition::Control()
     //cv::morphologyEx(yellowMask, yellowMask, cv::MORPH_OPEN, kernel_yellow);
 
 
-    // Mehrere Dilatations-Durchgänge: Erweitert die weißen Bereiche
+    // Extends White pixels
     //cv::dilate(yellowMask, yellowMask, kernel, cv::Point(-1, -1), dilationIterations.Get());
 
-    // Mehrere Erosions-Durchgänge: Schrumpft die weißen Bereiche
+    // Shrinks white pixels
     //cv::erode(yellowMask, yellowMask, kernel, cv::Point(-1, -1), erosionIterations.Get());
 
 
@@ -184,7 +205,7 @@ void mSignRecognition::Control()
 
     int detectedSign = 0; // 0 = kein Schild, 1 = Vorfahrts-/Vorfahrtachten-Schild, 2 = Stoppschild, 3 = Vorfahrtsstraßenschild
 
-    // --- Konturen finden ---
+    // --- Find contours ---
     std::vector<std::vector<cv::Point>> contours;
     cv::findContours(red_mask_filtered, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
@@ -196,12 +217,12 @@ void mSignRecognition::Control()
     {
       double area = cv::contourArea(contour);
 
-      // 1) Mindestfläche
+      // min size
       if (area < ignore_contour.Get())
         continue;
       
 
-      // Umrisslänge der Kontur
+      
       double perimeter = cv::arcLength(contour, true);
 
       std::vector<cv::Point> approx_small;
@@ -231,11 +252,11 @@ void mSignRecognition::Control()
       }
 
       
-      // Fahrbahnbegrenzung rausfiltern
+      // filter out driving road edge
       cv::Rect bbox = cv::boundingRect(contour);
       float aspect_ratio = static_cast<float>(bbox.width) / static_cast<float>(bbox.height);
 
-      if (aspect_ratio < 0.7f || aspect_ratio > 2.0f)  // Fahrbahnbegrenzung ist meist sehr in die länge gezogen
+      if (aspect_ratio < 0.7f || aspect_ratio > 2.0f)  // driving road edge is elongated
         continue;
       
     
@@ -274,11 +295,10 @@ void mSignRecognition::Control()
       for (auto& contour : YellowContours){
         double area = cv::contourArea(contour);
 
-        // 1) Mindestfläche
+        // min size
         if (area < ignore_contour.Get() * 0.5)
           continue;
         
-        // Umrisslänge der Kontur
         double perimeter = cv::arcLength(contour, true);
 
         std::vector<cv::Point> approx_large;

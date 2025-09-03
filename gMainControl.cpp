@@ -19,14 +19,6 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 //----------------------------------------------------------------------
-/*!\file    gMainControl.cpp
- *
- * \author  Unknown
- *
- * \date    2011-11-07
- *
- */
-//----------------------------------------------------------------------
 #include "projects/robprak_2024_2/gMainControl.h"
 
 //----------------------------------------------------------------------
@@ -77,10 +69,6 @@ gMainControl::gMainControl(finroc::core::tFrameworkElement *parent, const std::s
                            const std::string &structure_config_file) :
   tSenseControlGroup(parent, name, structure_config_file)
 
-// to access hardware / unreal interface use e.g.
-// this->si_velocity.ConnectTo(...)
-// to set the velocity of the unimog: this->co_velocity.ConnectTo(out_your_velocity_port);
-// etc.
 {
   // TrackRecognition
   auto trackrec = new mTrackRecognition(this);
